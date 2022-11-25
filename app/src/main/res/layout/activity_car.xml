@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/newcar2">
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="156dp"
+        android:layout_height="49dp"
+        android:text="submit"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="111dp"
+        tools:layout_editor_absoluteY="703dp" />
+
+    <EditText
+        android:id="@+id/email11"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:layout_width="wrap_content"
+        android:hint="Kilometrage"
+        android:inputType="textPersonName"
+        android:textColorHint="#FFEB3B"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.715" />
+
+    <EditText
+        android:id="@+id/email10"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:hint="modele"
+        android:layout_width="wrap_content"
+        android:inputType="textPersonName"
+        android:textColorHint="#FFEB3B"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email9"
+        app:layout_constraintVertical_bias="0.097" />
+
+    <EditText
+        android:id="@+id/email9"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:hint="marque"
+        android:inputType="textPersonName"
+        android:textColorHint="#FFEB3B"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.329" />
+
+    <EditText
+        android:id="@+id/email4"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:hint="mise en circulation"
+        android:inputType="textPersonName"
+        android:textColorHint="#FFEB3B"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/email11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email10"
+        app:layout_constraintVertical_bias="0.52" />
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/toolbar" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="54dp"
+        android:text="ma voiture"
+        android:textColor="#9C27B0"
+        android:textColorHint="#3F51B5"
+        android:textColorLink="#3F51B5"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/email9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include"
+        app:layout_constraintVertical_bias="0.497" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
