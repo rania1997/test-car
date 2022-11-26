@@ -9,12 +9,12 @@ import com.example.cartest.cars.CarAdapter
 
 class TestCarActivity : AppCompatActivity() {
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_carlist)
 
         val recyclerView: RecyclerView = findViewById(R.id.recyclerview)
-
         val cars = listOf(
             Car("Marque 1", "Model 1", "MEC 1", "10"),
             Car("Marque 2", "Model 2", "MEC 2", "20"),
