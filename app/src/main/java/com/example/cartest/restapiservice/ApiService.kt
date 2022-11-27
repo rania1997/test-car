@@ -8,7 +8,7 @@ object ApiService {
     private fun retrofit(): Retrofit {
         return Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl("http://192.168.1.59:3000/")
+            .baseUrl("http://192.168.243.16:3000/")
             .build()
     }
 
