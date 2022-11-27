@@ -1,12 +1,16 @@
 package com.example.cartest
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.cartest.datamodels.User
-import com.example.cartest.restapiservice.RestApiService
+import com.example.cartest.restapiservice.ApiService
+import com.example.cartest.restapiservice.UserService
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class SignUpActivity : AppCompatActivity() {
 
@@ -30,7 +34,7 @@ class SignUpActivity : AppCompatActivity() {
                 prenom = prenomEditText.text.toString(),
                 email = emailEditText.text.toString(),
                 motDePasse = motDePasseEditText.text.toString(),
-                adresse = adresseEditText.text.toString() ,
+                adresse = adresseEditText.text.toString(),
                 dateDeNaissance = dateDeNaissanceEditText.text.toString()
             )
             System.out.println(user)
@@ -38,20 +42,43 @@ class SignUpActivity : AppCompatActivity() {
         }
 
     }
-    fun addUser(user:User) {
-        val apiService = RestApiService()
 
+    fun addUser(user: User) {
+        ApiService.userService.register(
+            UserService.SignUpBody(
+                user.nom!!,
+                user.prenom!!,
+                user.email!!,
+                user.motDePasse!!,
+                user.adresse!!,
+                user.dateDeNaissance!!,
+            )
+        ).enqueue(
+            object : Callback<UserService.MessageResponse> {
+                override fun onResponse(
+                    call: Call<UserService.MessageResponse>,
+                    response: Response<UserService.MessageResponse>
+                ) {
+                    if (response.code() == 201) {
+                        finish()
+                        val intent =
+                            Intent(this@SignUpActivity, LoginActivity::class.java)
+                        startActivity(intent)
+                    } else {
+                        MakeAlert().makeAlert(this@SignUpActivity, "Warning", "Please verify the informations")
 
-        apiService.addUser(this, user) {
-            Toast.makeText(this,"signing up... ", Toast.LENGTH_SHORT).show()
+                        println("status code is " + response.code())
+                    }
+                }
 
-            if (it?.id != null) {
-//                 it = newly added user parsed as response
-//                 it?.id = newly added user ID
-                Toast.makeText(this,"welcome "+it.prenom, Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this,"Username or Password wrong !!", Toast.LENGTH_SHORT).show()
+                override fun onFailure(
+                    call: Call<UserService.MessageResponse>,
+                    t: Throwable
+                ) {
+                    println("HTTP ERROR")
+                    t.printStackTrace()
+                }
             }
-        }
+        )
     }
 }

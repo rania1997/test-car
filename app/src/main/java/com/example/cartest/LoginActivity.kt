@@ -1,39 +1,46 @@
 package com.example.cartest
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
-import androidx.appcompat.widget.Toolbar
+import android.widget.EditText
+import androidx.appcompat.app.AppCompatActivity
+import com.example.cartest.restapiservice.ApiService
+import com.example.cartest.restapiservice.UserService
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
+
+    var emailEditText: EditText? = null
+    var passwordEditText: EditText? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         setSupportActionBar(findViewById(R.id.toolbar))
 
+        emailEditText = findViewById(R.id.emailEditText)
+        passwordEditText = findViewById(R.id.passwordEditText)
 
-        var button : Button = findViewById(R.id.button2)
+        val button: Button = findViewById(R.id.button2)
         button.setOnClickListener {
-
-            val intent = Intent(this, TestCarActivity::class.java)
-            startActivity(intent)
+            login()
         }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-
-            getMenuInflater().inflate(R.menu.menu_item,menu);
-            return true;
+        menuInflater.inflate(R.menu.menu_item, menu);
+        return true;
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.signup -> {
-                val intent = Intent(this, SignUpActivity::class.java)
-                startActivity(intent)
+                startActivity(Intent(this@LoginActivity, SignUpActivity::class.java))
                 true
             }
 
@@ -41,4 +48,34 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    private fun login() {
+        ApiService.userService.login(
+            UserService.SignInBody(
+                emailEditText!!.text.toString(),
+                passwordEditText!!.text.toString(),
+            )
+        ).enqueue(
+            object : Callback<UserService.MessageResponse> {
+                override fun onResponse(
+                    call: Call<UserService.MessageResponse>,
+                    response: Response<UserService.MessageResponse>
+                ) {
+                    if (response.code() == 201) {
+                        startActivity(Intent(this@LoginActivity, TestCarActivity::class.java))
+                    } else {
+                        MakeAlert().makeAlert(this@LoginActivity, "Warning", "Invalid credentials")
+                        println("status code is " + response.code())
+                    }
+                }
+
+                override fun onFailure(
+                    call: Call<UserService.MessageResponse>,
+                    t: Throwable
+                ) {
+                    println("HTTP ERROR")
+                    t.printStackTrace()
+                }
+            }
+        )
+    }
 }
