@@ -61,7 +61,7 @@ class LoginActivity : AppCompatActivity() {
                     response: Response<UserService.MessageResponse>
                 ) {
                     if (response.code() == 201) {
-                        startActivity(Intent(this@LoginActivity, TestCarActivity::class.java))
+                        startActivity(Intent(this@LoginActivity, CarActivity::class.java))
                     } else {
                         MakeAlert().makeAlert(this@LoginActivity, "Warning", "Invalid credentials")
                         println("status code is " + response.code())
