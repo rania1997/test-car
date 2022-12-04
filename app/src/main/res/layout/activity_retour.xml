@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/car_repaircopie">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/car_repaircopiethree"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="-29dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/car_repaircopietwo"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="-152dp">
+
+            <include
+
+                layout="@layout/toolbar" />
+
+            <TextView
+                android:id="@+id/liqiuideDeRefroidissement"
+                android:layout_width="301dp"
+                android:layout_height="48dp"
+                android:background="@drawable/bordertwo"
+                android:hint="   pneu"
+                android:text="   liquide de refroidissement"
+                android:textColor="#2196F3"
+                android:textSize="24sp"
+                android:textStyle="italic"
+                tools:layout_editor_absoluteX="59dp"
+                tools:layout_editor_absoluteY="582dp" />
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="296dp"
+                android:layout_height="65dp"
+                android:layout_marginBottom="32dp"
+                android:text="etat de la voiture"
+
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.493"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="242dp"
+                android:layout_height="47dp"
+                android:background="@drawable/bordertwo"
+                android:hint="pneu"
+                android:text="   pneu"
+                android:textColor="#2196F3"
+                android:textSize="24sp"
+                android:textStyle="italic"
+                tools:layout_editor_absoluteX="57dp"
+                tools:layout_editor_absoluteY="239dp" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="238dp"
+                android:layout_height="43dp"
+                android:background="@drawable/bordertwo"
+                android:text="   huile avec filtre"
+                android:textColor="#2196F3"
+                android:textSize="24sp"
+                android:textStyle="italic"
+                tools:layout_editor_absoluteX="57dp"
+                tools:layout_editor_absoluteY="113dp" />
+
+            <TextView
+                android:id="@+id/plaquettesDeFrein"
+                android:layout_width="227dp"
+                android:layout_height="49dp"
+                android:background="@drawable/bordertwo"
+                android:text="   plaquettes de frein"
+                android:textColor="#2196F3"
+                android:textSize="24sp"
+                android:textStyle="italic"
+                tools:layout_editor_absoluteX="72dp"
+                tools:layout_editor_absoluteY="402dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
