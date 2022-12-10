@@ -15,7 +15,7 @@ class CarActivity : AppCompatActivity() {
 
         submitButton = findViewById(R.id.submitButton)
         submitButton!!.setOnClickListener {
-            startActivity(Intent(this@CarActivity,TestCarActivity::class.java))
+            startActivity(Intent(this@CarActivity,NotesVoitureActivity::class.java))
         }
         val nexButton = findViewById<Button>(R.id.buttonnext)
         nexButton!!.setOnClickListener {

@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/quit"
-        android:title="quit"
-        app:showAsAction="ifRoom"
-        android:icon="@drawable/ic_baseline_logout_24"
-        />
+        android:id="@+id/reparations"
+        android:icon="@drawable/ic_baseline_home_repair_service_24"
+        android:title="Réparations" />
+
+    <item
+        android:id="@+id/papiers"
+        android:icon="@drawable/ic_baseline_event_note_24"
+        android:title="Papiers" />
+
+    <item
+        android:id="@+id/rappels"
+        android:color="@color/green"
+        android:icon="@drawable/ic_baseline_notifications_24"
+        android:title="Rappels" />
+
+    <item
+        android:id="@+id/rapports"
+        android:icon="@drawable/ic_baseline_trending_up_24"
+        android:title="Rapports" />
 
 </menu>

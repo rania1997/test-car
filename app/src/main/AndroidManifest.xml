@@ -68,6 +68,7 @@
         <activity android:name=".TestCarActivity" />
         <activity android:name=".CarActivity" />
         <activity android:name=".MapActivity" />
+        <activity android:name="com.example.cartest.NotesVoitureActivity" />
 
     </application>
 
