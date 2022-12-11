@@ -21,18 +21,6 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <Button
-                    android:layout_width="25dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="0dp"
-                    android:layout_marginHorizontal="10dp"
-                    android:background="@color/transparent"
-                    android:drawableEnd="@drawable/ic_baseline_settings_24"
-                    android:drawablePadding="0dp"
-                    android:drawableTint="@color/black"
-                    android:padding="0dp"
-                    android:textSize="0sp" />
-
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -41,30 +29,6 @@
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
-
-                <Button
-                    android:layout_width="25dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginVertical="0dp"
-                    android:background="@color/transparent"
-                    android:drawableEnd="@drawable/ic_baseline_directions_car_24"
-                    android:drawablePadding="0dp"
-                    android:drawableTint="@color/black"
-                    android:padding="0dp"
-                    android:textSize="0sp" />
-
-                <Button
-                    android:layout_width="25dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="0dp"
-                    android:layout_marginHorizontal="10dp"
-                    android:background="@color/transparent"
-                    android:drawableEnd="@drawable/ic_baseline_notifications_24"
-                    android:drawablePadding="0dp"
-                    android:drawableTint="@color/black"
-                    android:padding="0dp"
-                    android:textSize="0sp" />
 
             </LinearLayout>
 
@@ -101,9 +65,9 @@
                     android:textSize="20sp" />
 
                 <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/huileProgressBar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:progress="80"
                     app:indicatorColor="@color/red"
                     app:trackColor="@color/grey" />
             </LinearLayout>
@@ -122,9 +86,10 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/huileTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="70000 km"
+                    android:text="0 km"
                     android:textColor="@color/yellow"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -166,6 +131,7 @@
                     android:textSize="20sp" />
 
                 <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/assuranceProgressBar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:progress="40"
@@ -250,59 +216,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="10dp"
-                android:contentDescription="@string/todo"
-                app:srcCompat="@drawable/notes_4" />
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Impôt"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-
-                <com.google.android.material.progressindicator.LinearProgressIndicator
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:progress="0"
-                    app:indicatorColor="@color/red"
-                    app:trackColor="@color/grey" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="20/12/2022"
-                    android:textColor="@color/green"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-        </LinearLayout>
-
         <com.google.android.material.divider.MaterialDivider
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -374,25 +287,5 @@
 
 
     </LinearLayout>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/bottomNavigationBar"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:backgroundTint="@color/purple_700"
-        android:contentDescription="@string/todo"
-        android:src="@drawable/ic_baseline_notifications_24"
-        app:tint="@color/white" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        app:labelVisibilityMode="labeled"
-        app:menu="@menu/menu" />
 
 </RelativeLayout>

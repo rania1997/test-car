@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/car_repairfour">
@@ -17,10 +16,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.216"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email11" />
+        app:layout_constraintTop_toBottomOf="@+id/kilometrageEditText" />
 
     <EditText
-        android:id="@+id/email11"
+        android:id="@+id/kilometrageEditText"
         android:layout_width="363dp"
         android:layout_height="53dp"
         android:background="@drawable/bordertwo"
@@ -88,7 +87,7 @@
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@+id/email11"
+        app:layout_constraintBottom_toTopOf="@+id/kilometrageEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
@@ -103,8 +102,8 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="54dp"
-        android:text="ma voiture"
         android:paddingLeft="20dp"
+        android:text="ma voiture"
         android:textColor="#FFFFFF"
         android:textColorHint="#3F51B5"
         android:textColorLink="#3F51B5"
