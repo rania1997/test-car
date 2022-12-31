@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schema.android.com/apk/res.auto">
+    <item
+        android:id="@+id/reparations"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_baseline_home_repair_service_24"
+        android:title="Réparations" />
+
+
+    <item
+        android:id="@+id/map"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_baseline_trending_up_24"
+        android:title="Map" />
+
+</menu>
